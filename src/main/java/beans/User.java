@@ -7,6 +7,9 @@ import java.security.NoSuchAlgorithmException;
 import java.util.Objects;
 import java.util.UUID;
 
+/**
+ * Class that describes user object
+ */
 public class User {
     private String email;
     private final String uuid;

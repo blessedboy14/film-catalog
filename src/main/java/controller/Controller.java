@@ -11,12 +11,27 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+/**
+ * Class for managing requests, parse commands and call execute method of ICommand
+ */
 public class Controller extends HttpServlet {
+    /**
+     * Handling GET request
+     * @param req Request
+     * @param resp Response
+     * @throws ServletException
+     * @throws IOException
+     */
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
         processCommands(req, resp);
     }
 
+    /**
+     * Parsing complex command to identifying requested jsp page
+     * @param command complex URL from request
+     * @return Simple url, just last word from url
+     */
     private String parseComplexCommand(String command) {
         if (command.endsWith("/review")) {
             return "review";
@@ -29,6 +44,13 @@ public class Controller extends HttpServlet {
         }
     }
 
+    /**
+     * Calling corresponding ICommand implementation
+     * @param req Request
+     * @param resp Response
+     * @throws ServletException
+     * @throws IOException
+     */
     private void processCommands(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String commandName = req.getRequestURI().substring(1);
         if (commandName.contains("/")) {
@@ -53,6 +75,13 @@ public class Controller extends HttpServlet {
         }
     }
 
+    /**
+     * Handling POST request
+     * @param req Request
+     * @param resp Response
+     * @throws ServletException
+     * @throws IOException
+     */
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         processCommands(req, resp);

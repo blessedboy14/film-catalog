@@ -4,6 +4,9 @@ import java.util.Collections;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
+/**
+ * Enum that describes allowable locale
+ */
 public enum Language {
     ENGLISH("en"), RUSSIAN("ru");
     private String name;

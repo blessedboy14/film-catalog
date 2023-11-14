@@ -4,6 +4,9 @@ import java.util.Collections;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
+/**
+ * Enum that describes allowable film genres
+ */
 public enum Genre {
     HORROR("Horror"), MYSTERY("Mystery"), THRILLER("Thriller"), COMEDY("Comedy"),
     DRAMA("Drama"), FAMILY("Family"), FANTASY("Fantasy"), ACTION("Action"),

@@ -5,6 +5,9 @@ import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.Objects;
 
+/**
+ * Class that describes user review to film
+ */
 public class Review {
     private String reviewFilmId;
     private String dateAdded;

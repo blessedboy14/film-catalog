@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+/**
+ * Class that describes film object itself
+ */
 public class Film {
     private Director director;
     private String title;
