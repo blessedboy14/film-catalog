@@ -52,17 +52,17 @@ public interface CatalogService {
     List<Film> searchFilms(String title) throws ServiceException;
 
     /**
-     *
-     * @param film_id
-     * @return
+     * Retrieve all film reviews
+     * @param film_id Target film id
+     * @return List of reviews or empty list if not found
      * @throws ServiceException
      */
     List<Review> getFilmReviews(String film_id) throws ServiceException;
 
     /**
-     * 
-     * @param film_id
-     * @return
+     * Deleting film with corresponding id
+     * @param film_id Target film id
+     * @return RESULT of deleting
      * @throws ServiceException
      */
     RESULT deleteFilm(String film_id) throws ServiceException;
