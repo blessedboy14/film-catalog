@@ -1,0 +1,2 @@
+make detail film view
+add reviews to films

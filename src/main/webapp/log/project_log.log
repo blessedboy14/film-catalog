@@ -1,0 +1,94 @@
+2023-11-13 19:29:48 INFO  impl.ClientServiceImpl:26 - User admin@admin.com sign in
+2023-11-13 19:36:00 INFO  impl.CatalogServiceImpl:113 - List films of amount of 30
+2023-11-13 19:39:06 INFO  impl.CatalogServiceImpl:113 - List films of amount of 30
+2023-11-13 19:57:30 INFO  impl.CatalogServiceImpl:113 - List films of amount of 30
+2023-11-13 20:12:21 INFO  impl.CatalogServiceImpl:113 - List films of amount of 30
+2023-11-13 20:12:23 INFO  impl.CatalogServiceImpl:113 - List films of amount of 30
+2023-11-13 20:12:26 INFO  impl.CatalogServiceImpl:166 - Search film with title The
+2023-11-13 20:49:27 INFO  impl.CatalogServiceImpl:113 - List films of amount of 30
+2023-11-13 20:49:29 INFO  impl.CatalogServiceImpl:150 - Get film with id 405
+2023-11-13 20:49:29 INFO  impl.CatalogServiceImpl:191 - Get reviews for film with id 405
+2023-11-13 21:22:21 INFO  impl.CatalogServiceImpl:113 - List films of amount of 30
+2023-11-13 21:29:37 INFO  impl.CatalogServiceImpl:113 - List films of amount of 30
+2023-11-13 21:46:29 INFO  impl.CatalogServiceImpl:113 - List films of amount of 30
+2023-11-13 21:46:34 INFO  impl.CatalogServiceImpl:150 - Get film with id 224
+2023-11-13 21:46:34 INFO  impl.CatalogServiceImpl:191 - Get reviews for film with id 224
+2023-11-13 21:46:38 INFO  impl.CatalogServiceImpl:113 - List films of amount of 30
+2023-11-13 21:46:40 INFO  impl.CatalogServiceImpl:150 - Get film with id 405
+2023-11-13 21:46:40 INFO  impl.CatalogServiceImpl:191 - Get reviews for film with id 405
+2023-11-13 21:46:42 INFO  impl.CatalogServiceImpl:113 - List films of amount of 30
+2023-11-13 21:47:59 INFO  impl.CatalogServiceImpl:113 - List films of amount of 30
+2023-11-13 21:48:01 INFO  impl.CatalogServiceImpl:113 - List films of amount of 30
+2023-11-13 21:48:03 INFO  impl.CatalogServiceImpl:150 - Get film with id 405
+2023-11-13 21:48:03 INFO  impl.CatalogServiceImpl:191 - Get reviews for film with id 405
+2023-11-13 21:48:17 INFO  impl.CatalogServiceImpl:150 - Get film with id 405
+2023-11-13 21:48:17 INFO  impl.CatalogServiceImpl:191 - Get reviews for film with id 405
+2023-11-13 21:50:54 INFO  impl.CatalogServiceImpl:113 - List films of amount of 30
+2023-11-13 21:51:00 INFO  impl.CatalogServiceImpl:150 - Get film with id 405
+2023-11-13 21:51:00 INFO  impl.CatalogServiceImpl:191 - Get reviews for film with id 405
+2023-11-13 21:51:20 INFO  impl.CatalogServiceImpl:113 - List films of amount of 30
+2023-11-13 21:51:22 INFO  impl.CatalogServiceImpl:150 - Get film with id 405
+2023-11-13 21:51:22 INFO  impl.CatalogServiceImpl:191 - Get reviews for film with id 405
+2023-11-13 21:52:32 INFO  impl.CatalogServiceImpl:113 - List films of amount of 30
+2023-11-13 21:52:33 INFO  impl.CatalogServiceImpl:150 - Get film with id 405
+2023-11-13 21:52:33 INFO  impl.CatalogServiceImpl:191 - Get reviews for film with id 405
+2023-11-13 21:52:52 INFO  impl.CatalogServiceImpl:113 - List films of amount of 30
+2023-11-13 21:52:53 INFO  impl.CatalogServiceImpl:150 - Get film with id 405
+2023-11-13 21:52:53 INFO  impl.CatalogServiceImpl:191 - Get reviews for film with id 405
+2023-11-13 21:53:16 INFO  impl.CatalogServiceImpl:113 - List films of amount of 30
+2023-11-13 21:53:18 INFO  impl.CatalogServiceImpl:150 - Get film with id 405
+2023-11-13 21:53:18 INFO  impl.CatalogServiceImpl:191 - Get reviews for film with id 405
+2023-11-13 21:55:14 INFO  impl.CatalogServiceImpl:113 - List films of amount of 30
+2023-11-13 21:55:15 INFO  impl.CatalogServiceImpl:150 - Get film with id 405
+2023-11-13 21:55:15 INFO  impl.CatalogServiceImpl:191 - Get reviews for film with id 405
+2023-11-13 21:58:39 INFO  impl.CatalogServiceImpl:113 - List films of amount of 30
+2023-11-13 21:58:44 INFO  impl.CatalogServiceImpl:113 - List films of amount of 30
+2023-11-13 21:58:45 INFO  impl.CatalogServiceImpl:150 - Get film with id 405
+2023-11-13 21:58:45 INFO  impl.CatalogServiceImpl:191 - Get reviews for film with id 405
+2023-11-13 21:59:53 INFO  impl.CatalogServiceImpl:113 - List films of amount of 30
+2023-11-13 21:59:54 INFO  impl.CatalogServiceImpl:150 - Get film with id 405
+2023-11-13 21:59:54 INFO  impl.CatalogServiceImpl:191 - Get reviews for film with id 405
+2023-11-13 22:02:12 INFO  impl.CatalogServiceImpl:113 - List films of amount of 30
+2023-11-13 22:02:13 INFO  impl.CatalogServiceImpl:150 - Get film with id 405
+2023-11-13 22:02:13 INFO  impl.CatalogServiceImpl:191 - Get reviews for film with id 405
+2023-11-14 13:46:52 INFO  impl.CatalogServiceImpl:113 - List films of amount of 30
+2023-11-14 13:47:03 INFO  impl.CatalogServiceImpl:166 - Search film with title The
+2023-11-14 13:47:08 INFO  impl.CatalogServiceImpl:166 - Search film with title Hasda
+2023-11-14 13:47:10 INFO  impl.CatalogServiceImpl:166 - Search film with title ADs
+2023-11-14 13:47:13 INFO  impl.CatalogServiceImpl:166 - Search film with title The
+2023-11-14 15:49:27 INFO  impl.CatalogServiceImpl:113 - List films of amount of 30
+2023-11-14 15:56:06 INFO  impl.CatalogServiceImpl:113 - List films of amount of 30
+2023-11-14 15:56:12 INFO  impl.CatalogServiceImpl:150 - Get film with id 405
+2023-11-14 15:56:12 INFO  impl.CatalogServiceImpl:191 - Get reviews for film with id 405
+2023-11-14 15:56:26 INFO  impl.ClientServiceImpl:69 - User admin@admin.com register
+2023-11-14 15:56:46 INFO  impl.ClientServiceImpl:69 - User admin2@admin.com register
+2023-11-14 15:56:49 INFO  impl.CatalogServiceImpl:113 - List films of amount of 30
+2023-11-14 15:56:50 INFO  impl.CatalogServiceImpl:150 - Get film with id 405
+2023-11-14 15:56:50 INFO  impl.CatalogServiceImpl:191 - Get reviews for film with id 405
+2023-11-14 15:56:53 INFO  impl.ClientServiceImpl:89 - Return admin2@admin.com review
+2023-11-14 15:58:51 INFO  impl.CatalogServiceImpl:113 - List films of amount of 30
+2023-11-14 15:58:58 INFO  impl.CatalogServiceImpl:113 - List films of amount of 30
+2023-11-14 15:59:29 INFO  impl.CatalogServiceImpl:113 - List films of amount of 30
+2023-11-14 15:59:32 INFO  impl.CatalogServiceImpl:166 - Search film with title The
+2023-11-14 15:59:54 INFO  impl.CatalogServiceImpl:113 - List films of amount of 30
+2023-11-14 15:59:58 INFO  impl.CatalogServiceImpl:166 - Search film with title Lord
+2023-11-14 16:00:34 INFO  impl.CatalogServiceImpl:113 - List films of amount of 30
+2023-11-14 16:00:36 INFO  impl.CatalogServiceImpl:166 - Search film with title Lord
+2023-11-14 16:00:39 INFO  impl.CatalogServiceImpl:166 - Search film with title Lord
+2023-11-14 16:00:43 INFO  impl.CatalogServiceImpl:150 - Get film with id 537
+2023-11-14 16:00:43 INFO  impl.CatalogServiceImpl:191 - Get reviews for film with id 537
+2023-11-14 16:01:02 INFO  impl.ClientServiceImpl:26 - User admin2@admin.com sign in
+2023-11-14 16:01:04 INFO  impl.CatalogServiceImpl:113 - List films of amount of 30
+2023-11-14 16:01:08 INFO  impl.CatalogServiceImpl:166 - Search film with title Lord
+2023-11-14 16:01:10 INFO  impl.CatalogServiceImpl:150 - Get film with id 537
+2023-11-14 16:01:10 INFO  impl.CatalogServiceImpl:191 - Get reviews for film with id 537
+2023-11-14 16:01:11 INFO  impl.ClientServiceImpl:89 - Return admin2@admin.com review
+2023-11-14 16:01:17 INFO  impl.ClientServiceImpl:106 - Adding admin2@admin.com review
+2023-11-14 16:01:26 INFO  impl.CatalogServiceImpl:191 - Get reviews for film with id 
+2023-11-14 16:01:26 ERROR impl.CatalogServiceImpl:194 - Error while getting reviews for film with id 
+2023-11-14 16:01:30 INFO  impl.CatalogServiceImpl:150 - Get film with id 537
+2023-11-14 16:01:30 INFO  impl.CatalogServiceImpl:191 - Get reviews for film with id 537
+2023-11-14 16:01:38 INFO  impl.CatalogServiceImpl:150 - Get film with id 5377
+2023-11-14 16:01:38 INFO  impl.CatalogServiceImpl:191 - Get reviews for film with id 5377
+2023-11-14 16:01:39 INFO  impl.CatalogServiceImpl:113 - List films of amount of 30
+2023-11-14 16:01:46 INFO  impl.CatalogServiceImpl:113 - List films of amount of 30
