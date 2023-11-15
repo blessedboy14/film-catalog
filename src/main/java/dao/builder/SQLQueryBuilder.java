@@ -1,6 +1,8 @@
-package dao;
+package dao.builder;
 
 import beans.Review;
+import beans.Status;
+import beans.User;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -25,6 +27,16 @@ public class SQLQueryBuilder {
             sb.append(valuesName[i]).append("='").append(values[i]).append("'").append(" AND ");
         }
         sb.replace(sb.length()-4, sb.length(), "").append(";");
+        return sb.toString();
+    }
+
+    public String updateField(String tableName, String updateField, String updateVal,
+                              String whereField, String whereVal) {
+        StringBuilder sb = new StringBuilder();
+        sb.append("UPDATE ").append(tableName).append(" SET ");
+        sb.append(updateField).append(" = ").append(updateVal);
+        sb.append(" WHERE ");
+        sb.append(whereField).append(" = ").append("'").append(whereVal).append("';");
         return sb.toString();
     }
 
@@ -60,6 +72,17 @@ public class SQLQueryBuilder {
         StringBuilder sb = new StringBuilder();
         sb.append("SELECT * FROM ").append(tableName).append(" WHERE ").append(valueName).append("='").append(value)
                 .append("';");
+        return sb.toString();
+    }
+
+    public String selectValues(String tableName, String[] vals) {
+        StringBuilder sb = new StringBuilder();
+        sb.append("SELECT ");
+        for (String val : vals) {
+            sb.append(val).append(",");
+        }
+        sb.replace(sb.length() - 1, sb.length(), "");
+        sb.append(" FROM ").append(tableName).append(";");
         return sb.toString();
     }
 
@@ -135,4 +158,13 @@ public class SQLQueryBuilder {
                 append(valueSearch).append("%' ").append(" LIMIT 30");
         return sb.toString();
     }
+
+    public User parseRSToUser(ResultSet rs) throws SQLException {
+        return new User(
+                rs.getString("email"),
+                Status.values()[Integer.parseInt(rs.getString("status"))],
+                rs.getString("phone_number")
+        );
+    }
+
 }

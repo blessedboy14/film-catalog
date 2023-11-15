@@ -19,7 +19,7 @@ public class CatalogServiceImpl implements CatalogService {
 
     private static final Logger log = Logger.getLogger(CatalogServiceImpl.class);
     @Override
-    public RESULT addFilm(Map<String, Object> data) throws ServiceException {
+    public Result addFilm(Map<String, Object> data) throws ServiceException {
         Film newFilm = checkFilmInputData(data);
         if (newFilm != null) {
             DAOFactory daoFactory = DAOFactory.getInstance();
@@ -32,7 +32,7 @@ public class CatalogServiceImpl implements CatalogService {
                 throw new ServiceException("Error in DAO film add", e);
             }
         } else {
-            return RESULT.ADD_FILM_PARAMETER_ERROR;
+            return Result.ADD_FILM_PARAMETER_ERROR;
         }
     }
 
@@ -98,11 +98,6 @@ public class CatalogServiceImpl implements CatalogService {
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(name);
         return matcher.matches();
-    }
-
-    @Override
-    public void addEditFilm(Film film) throws ServiceException {
-
     }
 
     @Override
@@ -172,7 +167,7 @@ public class CatalogServiceImpl implements CatalogService {
     }
 
     @Override
-    public RESULT deleteFilm(String film_id) throws ServiceException {
+    public Result deleteFilm(String film_id) throws ServiceException {
         FilmDAO filmDAO = DAOFactory.getInstance().getFilmDAO();
         try {
             log.info(String.format("Deleting film with id %s", film_id));

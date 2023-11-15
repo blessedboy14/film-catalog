@@ -1,5 +1,5 @@
 package beans;
 
-public enum STATUS {
+public enum Status {
     STATUS_DEFAULT, STATUS_BANNED
 }

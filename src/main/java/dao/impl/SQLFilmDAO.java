@@ -2,11 +2,9 @@ package dao.impl;
 
 import beans.*;
 import dao.FilmDAO;
-import dao.SQLQueryBuilder;
+import dao.builder.SQLQueryBuilder;
 import dao.exception.DAOException;
 import dao.pool.ConnectionPool;
-import org.apache.taglibs.standard.tlv.JstlSqlTLV;
-import org.mindrot.jbcrypt.BCrypt;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -29,7 +27,7 @@ public class SQLFilmDAO implements FilmDAO {
         try { if(rs!=null) {rs.close();} } catch(SQLException e) { throw new DAOException("RS close except", e);}
     }
     @Override
-    public RESULT addFilm(Film film) throws DAOException {
+    public Result addFilm(Film film) throws DAOException {
         if (checkFilmAvailability(DB[0], new String[]{"title", "year"}, new String[]{film.getTitle(),
                 String.valueOf(film.getReleaseYear())})){
                 String[] fields = new String[]{"year", "length", "title", "stars", "director", "rating",
@@ -44,26 +42,26 @@ public class SQLFilmDAO implements FilmDAO {
                     stmt.executeUpdate(query);
                     int id = getFilmId();
                     addGenres(film.getFilmGenres(), id);
-                    return RESULT.ADD_FILM_OK;
+                    return Result.ADD_FILM_OK;
                 } catch (SQLException e) {
                     throw new DAOException(e);
                 } finally {
                     closeDBObjects();
                 }
         } else {
-            return RESULT.FILM_EXIST;
+            return Result.FILM_EXIST;
         }
     }
 
     @Override
-    public RESULT deleteFilm(String film_id) throws DAOException {
+    public Result deleteFilm(String film_id) throws DAOException {
         String query = sqlQueryBuilder.deleteWhere(DB[0], "film_id", film_id);
         try {
             con = connectionPool.getConnection();
             stmt = con.createStatement();
             int res = stmt.executeUpdate(query);
             System.out.println(res);
-            return RESULT.DELETE_FILM_OK;
+            return Result.DELETE_FILM_OK;
         } catch (SQLException e) {
             throw new DAOException("DAO error in film deleting", e);
         } finally {

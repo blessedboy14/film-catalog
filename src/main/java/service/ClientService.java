@@ -1,9 +1,11 @@
 package service;
 
-import beans.RESULT;
+import beans.Result;
 import beans.Review;
 import beans.User;
 import service.exception.ServiceException;
+
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -18,7 +20,7 @@ public interface ClientService {
      * @return Result of signing in
      * @throws ServiceException
      */
-    RESULT signIn(String login, String password) throws ServiceException;
+    Result signIn(String login, String password) throws ServiceException;
 
     /**
      * Register user, checking input data, calling DAO method
@@ -26,7 +28,7 @@ public interface ClientService {
      * @return Result of registration
      * @throws ServiceException
      */
-    RESULT registration(User user) throws ServiceException;
+    Result registration(User user) throws ServiceException;
 
     /**
      * Retrieving review of target user
@@ -43,5 +45,19 @@ public interface ClientService {
      * @return Result of adding or editing review
      * @throws ServiceException
      */
-    RESULT addUserReview(Map<String, String> data) throws ServiceException;
+    Result addUserReview(Map<String, String> data) throws ServiceException;
+
+    /**
+     * List all users for admin management
+     * @return List of all users
+     * @throws ServiceException
+     */
+    List<User> getAllUsers() throws ServiceException;
+
+    /**
+     * Method for blocking/unblocking users
+     * @return
+     * @throws ServiceException
+     */
+    Result changeUserStatus(String email) throws ServiceException;
 }

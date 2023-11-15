@@ -29,6 +29,7 @@ public final class CommandHelper {
         commands.put(CommandName.REVIEW, new AddReviewCommand());
         commands.put(CommandName.DELETE_FILM, new DeleteFilm());
         commands.put(CommandName.CHANGE_LOCALE, new LocaleChangeCommand());
+        commands.put(CommandName.USERS_MANAGING, new UsersManageCommand());
     }
 
     public static CommandHelper getInstance() {

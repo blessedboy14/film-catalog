@@ -1,7 +1,7 @@
 package service.command.impl;
 
 import beans.MethodsClass;
-import beans.RESULT;
+import beans.Result;
 import service.ClientService;
 import service.command.CommandAnswer;
 import service.command.GetAndPostCommand;
@@ -53,11 +53,11 @@ public class SignInCommand extends GetAndPostCommand {
             ServiceFactory serviceFactory = ServiceFactory.getInstance();
             ClientService clientService = serviceFactory.getClientService();
             try {
-                RESULT result = clientService.signIn(email, pass);
-                if (result == RESULT.SIGN_IN_OK || result == RESULT.SIGN_IN_OK_ADMIN) {
+                Result result = clientService.signIn(email, pass);
+                if (result == Result.SIGN_IN_OK || result == Result.SIGN_IN_OK_ADMIN) {
                     HttpSession session = req.getSession();
                     session.setAttribute("loggedIn", email);
-                    session.setAttribute("adminStatus", result == RESULT.SIGN_IN_OK ? null : "admin");
+                    session.setAttribute("adminStatus", result == Result.SIGN_IN_OK ? null : "admin");
                     answer.setRedirect(true);
                     answer.setRedirectUrl("/");
                     req.setAttribute("error", null);

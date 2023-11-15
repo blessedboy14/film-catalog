@@ -1,6 +1,6 @@
 package service.impl;
 
-import beans.RESULT;
+import beans.Result;
 import beans.Review;
 import beans.User;
 import dao.UserDAO;
@@ -11,6 +11,7 @@ import service.ClientService;
 import service.exception.ServiceException;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -18,7 +19,7 @@ import java.util.regex.Pattern;
 public class ClientServiceImpl implements ClientService {
     private static final Logger log = Logger.getLogger(ClientServiceImpl.class);
     @Override
-    public RESULT signIn(String login, String password) throws ServiceException {
+    public Result signIn(String login, String password) throws ServiceException {
         if (isEmailValid(login)) {
             DAOFactory daoFactory = DAOFactory.getInstance();
             UserDAO userDAO = daoFactory.getUserDAO();
@@ -30,7 +31,7 @@ public class ClientServiceImpl implements ClientService {
                 throw new ServiceException("Error in DAO signIn", e);
             }
         } else {
-            return RESULT.INCORRECT_EMAIL;
+            return Result.INCORRECT_EMAIL;
         }
     }
 
@@ -58,7 +59,21 @@ public class ClientServiceImpl implements ClientService {
     }
 
     @Override
-    public RESULT registration(User user) throws ServiceException {
+    public Result changeUserStatus(String email) throws ServiceException {
+        if (isEmailValid(email)) {
+            UserDAO dao = DAOFactory.getInstance().getUserDAO();
+            try {
+                return dao.changeUserStatus(email);
+            } catch (DAOException e) {
+                throw new ServiceException("Error while changing status");
+            }
+        } else {
+            return Result.INCORRECT_EMAIL;
+        }
+    }
+
+    @Override
+    public Result registration(User user) throws ServiceException {
         String email = user.getEmail();
         String phoneNumber = user.getPhoneNumber();
         if (isEmailValid(email)) {
@@ -73,10 +88,10 @@ public class ClientServiceImpl implements ClientService {
                     throw new ServiceException("DAO register error", e);
                 }
             } else {
-                return RESULT.INCORRECT_PHONE;
+                return Result.INCORRECT_PHONE;
             }
         } else {
-            return RESULT.INCORRECT_EMAIL;
+            return Result.INCORRECT_EMAIL;
         }
     }
 
@@ -98,7 +113,7 @@ public class ClientServiceImpl implements ClientService {
     }
 
     @Override
-    public RESULT addUserReview(Map<String, String> data) throws ServiceException {
+    public Result addUserReview(Map<String, String> data) throws ServiceException {
         DAOFactory daoFactory = DAOFactory.getInstance();
         UserDAO userDAO = daoFactory.getUserDAO();
         if (isEmailValid(data.get("email"))) {
@@ -110,7 +125,17 @@ public class ClientServiceImpl implements ClientService {
                 throw new ServiceException("Error with adding a review", e);
             }
         } else {
-            return RESULT.INCORRECT_EMAIL;
+            return Result.INCORRECT_EMAIL;
+        }
+    }
+
+    @Override
+    public List<User> getAllUsers() throws ServiceException {
+        UserDAO dao = DAOFactory.getInstance().getUserDAO();
+        try {
+            return dao.getAllUsers();
+        } catch (DAOException e){
+            throw new ServiceException("Error with getting all users");
         }
     }
 }

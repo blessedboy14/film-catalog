@@ -6,7 +6,8 @@ package service.command;
 public enum CommandName {
         ABOUT("about"), START(""), NO_SUCH_COMMAND("no_such_command"), LIST_FILMS("films"),
         SIGN_IN("signin"), REGISTER("register"), LOG_OUT("logout"), ADD_FILM("add-film"),
-        DETAIL("film"), REVIEW("review"), DELETE_FILM("delete-film"), CHANGE_LOCALE("locale");
+        DETAIL("film"), REVIEW("review"), DELETE_FILM("delete-film"), CHANGE_LOCALE("locale"),
+        USERS_MANAGING("users");
 
     private String name;
     CommandName(String about) {

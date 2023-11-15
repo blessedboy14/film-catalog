@@ -92,3 +92,66 @@
 2023-11-14 16:01:38 INFO  impl.CatalogServiceImpl:191 - Get reviews for film with id 5377
 2023-11-14 16:01:39 INFO  impl.CatalogServiceImpl:113 - List films of amount of 30
 2023-11-14 16:01:46 INFO  impl.CatalogServiceImpl:113 - List films of amount of 30
+2023-11-15 15:37:12 INFO  impl.ClientServiceImpl:26 - User admin@admin.com sign in
+2023-11-15 15:37:17 INFO  impl.ClientServiceImpl:26 - User admin@admin.com sign in
+2023-11-15 16:06:58 INFO  impl.ClientServiceImpl:27 - User admin@admin.com sign in
+2023-11-15 16:08:38 INFO  impl.ClientServiceImpl:27 - User admin@admin.com sign in
+2023-11-15 16:11:11 INFO  impl.ClientServiceImpl:27 - User admin@admin.com sign in
+2023-11-15 16:12:16 INFO  impl.ClientServiceImpl:27 - User admin@admin.com sign in
+2023-11-15 16:12:45 INFO  impl.ClientServiceImpl:27 - User admin@admin.com sign in
+2023-11-15 16:21:17 INFO  impl.ClientServiceImpl:27 - User admin@admin.com sign in
+2023-11-15 16:22:03 INFO  impl.ClientServiceImpl:27 - User admin@admin.com sign in
+2023-11-15 16:22:42 INFO  impl.ClientServiceImpl:27 - User admin@admin.com sign in
+2023-11-15 16:23:49 INFO  impl.ClientServiceImpl:27 - User admin@admin.com sign in
+2023-11-15 16:26:45 INFO  impl.ClientServiceImpl:27 - User admin@admin.com sign in
+2023-11-15 16:27:38 INFO  impl.ClientServiceImpl:27 - User admin@admin.com sign in
+2023-11-15 16:29:33 INFO  impl.ClientServiceImpl:27 - User admin@admin.com sign in
+2023-11-15 16:30:24 INFO  impl.ClientServiceImpl:27 - User admin@admin.com sign in
+2023-11-15 16:40:31 INFO  impl.ClientServiceImpl:27 - User admin@admin.com sign in
+2023-11-15 16:41:06 INFO  impl.ClientServiceImpl:27 - User admin@admin.com sign in
+2023-11-15 16:45:16 INFO  impl.ClientServiceImpl:27 - User admin@admin.com sign in
+2023-11-15 16:50:33 INFO  impl.ClientServiceImpl:27 - User admin@admin.com sign in
+2023-11-15 16:53:12 INFO  impl.ClientServiceImpl:27 - User admin@admin.com sign in
+2023-11-15 16:53:49 INFO  impl.ClientServiceImpl:27 - User admin@admin.com sign in
+2023-11-15 16:54:42 INFO  impl.ClientServiceImpl:27 - User admin@admin.com sign in
+2023-11-15 16:55:07 INFO  impl.ClientServiceImpl:27 - User admin@admin.com sign in
+2023-11-15 16:55:32 INFO  impl.ClientServiceImpl:27 - User admin@admin.com sign in
+2023-11-15 16:56:00 INFO  impl.ClientServiceImpl:27 - User admin@admin.com sign in
+2023-11-15 16:56:46 INFO  impl.ClientServiceImpl:27 - User admin@admin.com sign in
+2023-11-15 16:57:08 INFO  impl.ClientServiceImpl:27 - User admin@admin.com sign in
+2023-11-15 16:58:43 INFO  impl.ClientServiceImpl:27 - User admin@admin.com sign in
+2023-11-15 16:59:16 INFO  impl.ClientServiceImpl:27 - User admin@admin.com sign in
+2023-11-15 16:59:51 INFO  impl.ClientServiceImpl:27 - User admin@admin.com sign in
+2023-11-15 17:00:13 INFO  impl.ClientServiceImpl:27 - User admin@admin.com sign in
+2023-11-15 17:03:48 INFO  impl.ClientServiceImpl:27 - User admin@admin.com sign in
+2023-11-15 17:03:59 INFO  impl.ClientServiceImpl:27 - User dansof25@mail.ru sign in
+2023-11-15 17:08:35 INFO  impl.ClientServiceImpl:27 - User admin@admin.com sign in
+2023-11-15 17:08:48 INFO  impl.ClientServiceImpl:27 - User dansof25@mail.ru sign in
+2023-11-15 17:08:50 INFO  impl.CatalogServiceImpl:108 - List films of amount of 30
+2023-11-15 17:08:51 INFO  impl.CatalogServiceImpl:145 - Get film with id 405
+2023-11-15 17:08:51 INFO  impl.CatalogServiceImpl:186 - Get reviews for film with id 405
+2023-11-15 17:08:53 INFO  impl.ClientServiceImpl:104 - Return dansof25@mail.ru review
+2023-11-15 17:09:02 INFO  impl.ClientServiceImpl:121 - Adding dansof25@mail.ru review
+2023-11-15 17:09:02 ERROR impl.ClientServiceImpl:124 - Error while adding dansof25@mail.ru review
+2023-11-15 17:09:09 INFO  impl.CatalogServiceImpl:108 - List films of amount of 30
+2023-11-15 17:09:10 INFO  impl.CatalogServiceImpl:145 - Get film with id 405
+2023-11-15 17:09:10 INFO  impl.CatalogServiceImpl:186 - Get reviews for film with id 405
+2023-11-15 17:09:10 INFO  impl.ClientServiceImpl:104 - Return dansof25@mail.ru review
+2023-11-15 17:09:17 INFO  impl.ClientServiceImpl:104 - Return dansof25@mail.ru review
+2023-11-15 17:10:00 INFO  impl.ClientServiceImpl:27 - User dansof25@mail.ru sign in
+2023-11-15 17:10:02 INFO  impl.CatalogServiceImpl:108 - List films of amount of 30
+2023-11-15 17:10:03 INFO  impl.CatalogServiceImpl:145 - Get film with id 405
+2023-11-15 17:10:03 INFO  impl.CatalogServiceImpl:186 - Get reviews for film with id 405
+2023-11-15 17:10:04 INFO  impl.ClientServiceImpl:104 - Return dansof25@mail.ru review
+2023-11-15 17:10:13 INFO  impl.ClientServiceImpl:121 - Adding dansof25@mail.ru review
+2023-11-15 17:10:13 ERROR impl.ClientServiceImpl:124 - Error while adding dansof25@mail.ru review
+2023-11-15 17:10:25 INFO  impl.CatalogServiceImpl:108 - List films of amount of 30
+2023-11-15 17:10:26 INFO  impl.CatalogServiceImpl:145 - Get film with id 405
+2023-11-15 17:10:26 INFO  impl.CatalogServiceImpl:186 - Get reviews for film with id 405
+2023-11-15 17:10:40 INFO  impl.ClientServiceImpl:27 - User dansof25@mail.ru sign in
+2023-11-15 17:10:41 INFO  impl.CatalogServiceImpl:108 - List films of amount of 30
+2023-11-15 17:10:42 INFO  impl.CatalogServiceImpl:145 - Get film with id 405
+2023-11-15 17:10:42 INFO  impl.CatalogServiceImpl:186 - Get reviews for film with id 405
+2023-11-15 17:10:44 INFO  impl.ClientServiceImpl:104 - Return dansof25@mail.ru review
+2023-11-15 17:11:14 INFO  impl.ClientServiceImpl:121 - Adding dansof25@mail.ru review
+2023-11-15 17:11:47 ERROR impl.ClientServiceImpl:124 - Error while adding dansof25@mail.ru review

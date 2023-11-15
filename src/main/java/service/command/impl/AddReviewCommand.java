@@ -1,7 +1,7 @@
 package service.command.impl;
 
 import beans.MethodsClass;
-import beans.RESULT;
+import beans.Result;
 import beans.Review;
 import controller.JspPageName;
 import service.ClientService;
@@ -77,9 +77,9 @@ public class AddReviewCommand extends GetAndPostCommand {
             ServiceFactory serviceFactory = ServiceFactory.getInstance();
             ClientService clientService = serviceFactory.getClientService();
             try {
-                RESULT result = clientService.addUserReview(data);
-                if (result == RESULT.REVIEW_ADDED || result == RESULT.REVIEW_UPDATED) {
-                    req.setAttribute("errorBtn", result == RESULT.REVIEW_UPDATED ? "Review updated" : " Review added");
+                Result result = clientService.addUserReview(data);
+                if (result == Result.REVIEW_ADDED || result == Result.REVIEW_UPDATED) {
+                    req.setAttribute("errorBtn", result == Result.REVIEW_UPDATED ? "Review updated" : " Review added");
                 } else {
                     String error = MethodsClass.chooseErrorMessage(result);
                     req.setAttribute("errorBtn", error);

@@ -51,8 +51,15 @@ public class LocaleFilter implements Filter {
         HttpServletRequest httpServletRequest = (HttpServletRequest) servletRequest;
         HttpServletResponse httpServletResponse = (HttpServletResponse) servletResponse;
         String command = httpServletRequest.getRequestURI().substring(1);
-        if (command.endsWith("review") && httpServletRequest.getSession().getAttribute("loggedIn") == null) {
+        HttpSession session = httpServletRequest.getSession();
+        if (command.endsWith("review") && session.getAttribute("loggedIn") == null) {
             httpServletResponse.sendRedirect("/register");
+            return;
+        }
+        if ((command.endsWith("users") || command.endsWith("users/")
+                || command.endsWith("add-film") || command.endsWith("add-film/"))
+                && session.getAttribute("adminStatus")== null) {
+            httpServletResponse.sendRedirect("/");
             return;
         }
         Language language = getLocale(httpServletRequest);

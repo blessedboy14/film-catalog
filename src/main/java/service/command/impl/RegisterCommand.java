@@ -1,7 +1,7 @@
 package service.command.impl;
 
 import beans.MethodsClass;
-import beans.RESULT;
+import beans.Result;
 import beans.User;
 import service.ClientService;
 import service.command.CommandAnswer;
@@ -37,8 +37,8 @@ public class RegisterCommand extends GetAndPostCommand {
             ServiceFactory serviceFactory = ServiceFactory.getInstance();
             ClientService clientService = serviceFactory.getClientService();
             try {
-                RESULT result = clientService.registration(new User(email, pass, phoneNumber));
-                if (result == RESULT.REGISTER_OK) {
+                Result result = clientService.registration(new User(email, pass, phoneNumber));
+                if (result == Result.REGISTER_OK) {
                     HttpSession session = req.getSession();
                     session.setAttribute("loggedIn", email);
                     answer.setRedirect(true);

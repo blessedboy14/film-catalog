@@ -2,7 +2,7 @@ package service.command.impl;
 
 import beans.Genre;
 import beans.MethodsClass;
-import beans.RESULT;
+import beans.Result;
 import controller.JspPageName;
 import service.CatalogService;
 import service.command.CommandAnswer;
@@ -11,7 +11,6 @@ import service.exception.CommandException;
 import service.exception.ServiceException;
 import service.factory.ServiceFactory;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.HashMap;
@@ -72,8 +71,8 @@ public class AddFilmCommand extends GetAndPostCommand {
             ServiceFactory serviceFactory = ServiceFactory.getInstance();
             CatalogService catalogService = serviceFactory.getCatalogService();
             try{
-                RESULT result = catalogService.addFilm(data);
-                if (result == RESULT.ADD_FILM_OK) {
+                Result result = catalogService.addFilm(data);
+                if (result == Result.ADD_FILM_OK) {
                     req.setAttribute("errorFilm", "added");
                 } else {
                     String errorMessage = MethodsClass.chooseErrorMessage(result);

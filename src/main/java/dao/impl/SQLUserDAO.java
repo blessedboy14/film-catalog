@@ -1,21 +1,17 @@
 package dao.impl;
 
-import beans.RESULT;
+import beans.Result;
 import beans.Review;
+import beans.Status;
 import beans.User;
-import dao.SQLQueryBuilder;
+import dao.builder.SQLQueryBuilder;
 import dao.UserDAO;
 import dao.exception.DAOException;
 import dao.pool.ConnectionPool;
-import org.apache.commons.csv.CSVFormat;
-import org.apache.commons.csv.CSVParser;
-import org.apache.commons.csv.CSVRecord;
 import org.mindrot.jbcrypt.BCrypt;
 
-import java.io.FileReader;
-import java.io.IOException;
-import java.nio.charset.StandardCharsets;
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -31,8 +27,9 @@ public class SQLUserDAO implements UserDAO {
     public SQLUserDAO() {}
 
     @Override
-    public RESULT signIn(String login, String pass) throws DAOException {
-        String query = sqlQueryBuilder.selectValue(DB[0], new String[]{"password_hash", "privelege"}, "email", login);
+    public Result signIn(String login, String pass) throws DAOException {
+        String query = sqlQueryBuilder.selectValue(DB[0], new String[]{"password_hash", "privelege",
+                "status"}, "email", login);
         try {
             con = connectionPool.getConnection();
             stmt = con.createStatement();
@@ -40,14 +37,19 @@ public class SQLUserDAO implements UserDAO {
             if (rs.next()) {
                 String hashed = rs.getString("password_hash");
                 int privilege = rs.getInt("privelege");
-                boolean res = BCrypt.checkpw(pass, hashed);
-                if (res){
-                    return privilege == 1 ? RESULT.SIGN_IN_OK : RESULT.SIGN_IN_OK_ADMIN;
+                Status status = Status.values()[rs.getInt("status")];
+                if (status != Status.STATUS_BANNED) {
+                    boolean res = BCrypt.checkpw(pass, hashed);
+                    if (res) {
+                        return privilege == 1 ? Result.SIGN_IN_OK : Result.SIGN_IN_OK_ADMIN;
+                    } else {
+                        return Result.PASS_INCORRECT;
+                    }
                 } else {
-                    return RESULT.PASS_INCORRECT;
+                    return Result.USER_BANNED;
                 }
             } else {
-                return RESULT.EMAIL_NOT_USED;
+                return Result.EMAIL_NOT_USED;
             }
         } catch (SQLException e) {
             throw new DAOException(e);
@@ -77,7 +79,21 @@ public class SQLUserDAO implements UserDAO {
     }
 
     @Override
-    public RESULT registration(User user) throws DAOException {
+    public Result changeUserStatus(String email) throws DAOException {
+        String query = sqlQueryBuilder.updateField(DB[0], "status", "(status + 1)%2",
+                "email", email);
+        try {
+            con = connectionPool.getConnection();
+            stmt = con.createStatement();
+            int affectedRows = stmt.executeUpdate(query);
+            return Result.CHANGE_STATUS_OK;
+        } catch (SQLException e) {
+            throw new DAOException("Error while changing status");
+        }
+    }
+
+    @Override
+    public Result registration(User user) throws DAOException {
         if (checkValueAvailability(DB[0], "email", user.getEmail())){
             if (checkValueAvailability(DB[0], "phone_number", user.getPhoneNumber())) {
                 String query = sqlQueryBuilder.insertOne(DB[0],
@@ -88,17 +104,17 @@ public class SQLUserDAO implements UserDAO {
                     con = connectionPool.getConnection();
                     stmt = con.createStatement();
                     stmt.executeUpdate(query);
-                    return RESULT.REGISTER_OK;
+                    return Result.REGISTER_OK;
                 } catch (SQLException e) {
                     throw new DAOException(e);
                 } finally {
                     closeDBObjects();
                 }
             } else {
-                return RESULT.PHONE_USED;
+                return Result.PHONE_USED;
             }
         } else {
-            return RESULT.EMAIL_USED;
+            return Result.EMAIL_USED;
         }
     }
 
@@ -122,7 +138,7 @@ public class SQLUserDAO implements UserDAO {
     }
 
     @Override
-    public RESULT addUserReview(Map<String, String> data) throws DAOException {
+    public Result addUserReview(Map<String, String> data) throws DAOException {
         String query = sqlQueryBuilder.updateFieldsWhere(DB[1], new String[]{"review_text", "review_rating"},
                 new String[]{data.get("text"), data.get("rating")}, new String[]{"user_email", "film_id"},
                 new String[]{data.get("email"), data.get("film_id")});
@@ -135,9 +151,9 @@ public class SQLUserDAO implements UserDAO {
                         new String[]{"review_text", "review_rating", "user_email", "film_id"},
                         new String[]{data.get("text"), data.get("rating"), data.get("email"), data.get("film_id")});
                 stmt.executeUpdate(query);
-                return RESULT.REVIEW_ADDED;
+                return Result.REVIEW_ADDED;
             } else {
-                return RESULT.REVIEW_UPDATED;
+                return Result.REVIEW_UPDATED;
             }
         } catch (SQLException e) {
             throw new DAOException("Error updating review", e);
@@ -145,6 +161,26 @@ public class SQLUserDAO implements UserDAO {
             closeDBObjects();
         }
     }
+
+    @Override
+    public List<User> getAllUsers() throws DAOException {
+        String query = sqlQueryBuilder.selectValues(DB[0], new String[]{"email", "status", "phone_number"});
+        try {
+            con = connectionPool.getConnection();
+            stmt = con.createStatement();
+            rs = stmt.executeQuery(query);
+            List<User> users = new ArrayList<>();
+            while (rs.next()) {
+                users.add(sqlQueryBuilder.parseRSToUser(rs));
+            }
+            return users;
+        } catch (SQLException e) {
+            throw new DAOException("Error updating review", e);
+        } finally {
+            closeDBObjects();
+        }
+    }
+
 //    @Override
 //    public void addFilmsToBD() throws DAOException {
 //        String csvPath = "C:/Users/USER/Desktop/my_films.csv";

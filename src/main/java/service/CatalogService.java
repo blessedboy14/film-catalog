@@ -1,7 +1,7 @@
 package service;
 
 import beans.Film;
-import beans.RESULT;
+import beans.Result;
 import beans.Review;
 import service.exception.ServiceException;
 
@@ -18,7 +18,7 @@ public interface CatalogService {
      * @return RESULT of film adding operation(like SUCCESS, ERROR and others)
      * @throws ServiceException
      */
-    RESULT addFilm(Map<String, Object> data) throws ServiceException;
+    Result addFilm(Map<String, Object> data) throws ServiceException;
 
     /**
      * Listing films(first toList sorted by rating)
@@ -65,5 +65,5 @@ public interface CatalogService {
      * @return RESULT of deleting
      * @throws ServiceException
      */
-    RESULT deleteFilm(String film_id) throws ServiceException;
+    Result deleteFilm(String film_id) throws ServiceException;
 }

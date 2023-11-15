@@ -1,7 +1,6 @@
 package service.command.impl;
 
-import beans.Genre;
-import beans.RESULT;
+import beans.Result;
 import controller.JspPageName;
 import service.CatalogService;
 import service.command.CommandAnswer;
@@ -63,7 +62,7 @@ public class DeleteFilm extends GetAndPostCommand {
             if (req.getParameter("confirm") != null) {
                 CatalogService catalogService = ServiceFactory.getInstance().getCatalogService();
                 try {
-                    RESULT result = catalogService.deleteFilm(film_id);
+                    Result result = catalogService.deleteFilm(film_id);
                     return new CommandAnswer("", "/films", true);
                 } catch (ServiceException e) {
                     throw new CommandException("Error, when deleting film", e);

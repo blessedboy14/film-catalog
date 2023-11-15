@@ -11,12 +11,12 @@
                 <li><a id="redirectLinkAbout" href="#" class="nav-link px-2 text-white"><fmt:message key="navbar.about"/></a></li>
                 <c:if test="${sessionScope.adminStatus!=null}">
                     <li><a id="redirectLinkAdd" href="#" class="nav-link px-2 text-white"><fmt:message key="navbar.add_film"/></a></li>
+                    <li><a href="/users" class="nav-link px-2 text-white"><fmt:message key="navbar.users"/></a></li>
                 </c:if>
             </ul>
             <c:choose>
                 <c:when test="${sessionScope.loggedIn!=null}">
                     <div class="text-end">
-                        <button type="button" class="btn btn-outline-light me-2" onclick="redirectToProfile()"><fmt:message key="navbar.profile"/></button>
                         <form action="logout" method="POST" class="d-inline">
                             <button type="submit" class="btn btn-warning"><fmt:message key="navbar.log_out"/></button>
                         </form>

@@ -2,6 +2,7 @@ package service.command;
 
 import controller.JspPageName;
 import service.exception.CommandException;
+import service.exception.ServiceException;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;

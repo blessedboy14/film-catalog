@@ -2,8 +2,6 @@ package beans;
 
 import org.mindrot.jbcrypt.BCrypt;
 
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 import java.util.Objects;
 import java.util.UUID;
 
@@ -17,7 +15,7 @@ public class User {
     private String password;
 
     private String passHash;
-    private STATUS userStatus = STATUS.STATUS_DEFAULT;
+    private Status userStatus = Status.STATUS_DEFAULT;
 
     private int privilege;
 
@@ -32,6 +30,13 @@ public class User {
         this.phoneNumber = phoneNumber;
         this.uuid = generateId();
         this.privilege = 1;
+    }
+
+    public User(String email, Status status, String phoneNumber) {
+        this.email = email;
+        this.userStatus = status;
+        this.phoneNumber = phoneNumber;
+        this.uuid = generateId();
     }
 
     public void setPrivilege(int privilege) {
@@ -53,7 +58,7 @@ public class User {
         this.phoneNumber = phoneNumber;
     }
 
-    public STATUS getUserStatus() {
+    public Status getUserStatus() {
         return userStatus;
     }
 
@@ -84,6 +89,10 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
         this.generatePassHash();
+    }
+
+    public boolean isBlocked() {
+        return this.userStatus == Status.STATUS_BANNED;
     }
 
     @Override

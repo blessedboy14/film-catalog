@@ -1,9 +1,7 @@
 package beans;
 
-import org.mindrot.jbcrypt.BCrypt;
-
 public class MethodsClass {
-    public static String chooseErrorMessage(RESULT result) {
+    public static String chooseErrorMessage(Result result) {
         return switch (result) {
             case INCORRECT_EMAIL -> "Email is incorrect";
             case INCORRECT_PHONE -> "Phone is incorrect";
@@ -14,6 +12,7 @@ public class MethodsClass {
             case PASS_INCORRECT -> "Your pass in incorrect";
             case ADD_FILM_PARAMETER_ERROR -> "Film parameters incorrect";
             case FILM_EXIST -> "This film is already exist";
+            case USER_BANNED -> "User currently banned on this resource";
             default -> "Weird message";
         };
     }
