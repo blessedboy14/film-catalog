@@ -22,9 +22,9 @@ public class SQLFilmDAO implements FilmDAO {
     private final SQLQueryBuilder sqlQueryBuilder = new SQLQueryBuilder();
 
     private void closeDBObjects() throws DAOException {
-        connectionPool.releaseConnection(con);
         try { if(stmt!=null) {stmt.close();}} catch(SQLException e) {throw new DAOException("Stmt close except", e); }
         try { if(rs!=null) {rs.close();} } catch(SQLException e) { throw new DAOException("RS close except", e);}
+        connectionPool.releaseConnection(con);
     }
     @Override
     public Result addFilm(Film film) throws DAOException {

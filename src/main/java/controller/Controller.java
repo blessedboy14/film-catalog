@@ -61,7 +61,7 @@ public class Controller extends HttpServlet {
         try{
             answer = command.execute(req);
         } catch (Exception e) {
-            answer = new CommandAnswer(JspPageName.ERROR_PAGE, "", false);
+             answer = new CommandAnswer(JspPageName.ERROR_PAGE, "", false);
         }
         if (!answer.isRedirect()) {
             RequestDispatcher requestDispatcher = req.getRequestDispatcher(answer.getForwardPage());

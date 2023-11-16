@@ -155,3 +155,4 @@
 2023-11-15 17:10:44 INFO  impl.ClientServiceImpl:104 - Return dansof25@mail.ru review
 2023-11-15 17:11:14 INFO  impl.ClientServiceImpl:121 - Adding dansof25@mail.ru review
 2023-11-15 17:11:47 ERROR impl.ClientServiceImpl:124 - Error while adding dansof25@mail.ru review
+2023-11-16 14:14:10 INFO  impl.CatalogServiceImpl:108 - List films of amount of 30
